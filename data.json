@@ -1,0 +1,147 @@
+{
+  "rooms": [
+    {
+      "id": "default",
+      "name": "Default Room",
+      "ownerId": "system",
+      "inviteCode": "DEFAULT",
+      "members": [
+        {
+          "id": "1",
+          "name": "You",
+          "order": 0,
+          "avatar": "👤"
+        },
+        {
+          "id": "2",
+          "name": "Partner",
+          "order": 1,
+          "avatar": "💖"
+        },
+        {
+          "id": "3b387141-6dfa-4258-9caa-c8da4927a406",
+          "name": "のあゆき",
+          "email": "noayuki1111@gmail.com",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKJYk_IZZVAStGYrNm5KXoUtONAqCusd7_hrPplnGL6RsOeZg=s96-c",
+          "order": 2
+        }
+      ],
+      "currentMemberId": "2",
+      "history": [
+        {
+          "id": "c6e3f8ae-22f0-44ed-b813-c0d45b46a52f",
+          "memberId": "1",
+          "timestamp": "2026-01-26T12:40:25.895Z"
+        },
+        {
+          "id": "4d7e0265-15e4-4c9a-bf9e-35e40453cdd1",
+          "memberId": "2",
+          "timestamp": "2026-01-26T12:40:16.550Z"
+        },
+        {
+          "id": "c3a49dfc-ca71-4516-b4f3-36a87991c97c",
+          "memberId": "1",
+          "timestamp": "2026-01-26T12:40:13.871Z"
+        },
+        {
+          "id": "6ec4e409-8815-4158-9d04-21e473b11487",
+          "memberId": "2",
+          "timestamp": "2026-01-26T12:40:12.165Z"
+        },
+        {
+          "id": "3b7da325-712d-4179-912c-6418980f5216",
+          "memberId": "1",
+          "timestamp": "2026-01-26T12:40:07.859Z"
+        }
+      ]
+    },
+    {
+      "id": "f8409a05-4fb2-44bd-965a-321b70990fc4",
+      "name": "test",
+      "ownerId": "noayuki1111@gmail.com",
+      "inviteCode": "DA4C8FBD",
+      "members": [
+        {
+          "id": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+          "name": "のあゆき",
+          "email": "noayuki1111@gmail.com",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKJYk_IZZVAStGYrNm5KXoUtONAqCusd7_hrPplnGL6RsOeZg=s96-c",
+          "order": 0
+        },
+        {
+          "id": "4d1a9fac-ae91-442d-a89e-b2e9b5f9cc2c",
+          "name": "カタヤマホクト",
+          "email": "minahoku0725@gmail.com",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI1aoI00T4Xpt172Oz30AUuavZhwnIdMjgzYvoM9CKHyF0J1Q=s96-c",
+          "order": 1
+        }
+      ],
+      "currentMemberId": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+      "history": [
+        {
+          "id": "1554224b-0b4a-4424-84d9-d158f8b3ad92",
+          "memberId": "4d1a9fac-ae91-442d-a89e-b2e9b5f9cc2c",
+          "timestamp": "2026-01-27T01:08:01.674Z"
+        },
+        {
+          "id": "0261dff7-c234-463b-af19-2af283b174bf",
+          "memberId": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+          "timestamp": "2026-01-27T01:07:54.569Z"
+        },
+        {
+          "id": "88e586cf-f317-46a5-b351-85d7a89089b9",
+          "memberId": "4d1a9fac-ae91-442d-a89e-b2e9b5f9cc2c",
+          "timestamp": "2026-01-27T00:57:33.997Z"
+        },
+        {
+          "id": "c8dd9447-b7ce-47c2-8fb0-3165b43173fb",
+          "memberId": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+          "timestamp": "2026-01-27T00:57:20.977Z"
+        },
+        {
+          "id": "4eeb107b-03ba-4b39-b893-633b187561a4",
+          "memberId": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+          "timestamp": "2026-01-27T00:51:17.193Z"
+        },
+        {
+          "id": "6f1ec679-c734-4267-9ac4-d1d0a2987b77",
+          "memberId": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+          "timestamp": "2026-01-27T00:51:15.827Z"
+        },
+        {
+          "id": "7e05d6df-6c80-4f47-9674-48e6de6d9f00",
+          "memberId": "c2a994e9-b0b0-47e2-9460-97eb3ec35369",
+          "timestamp": "2026-01-27T00:50:57.980Z"
+        }
+      ]
+    },
+    {
+      "id": "3d84814a-4a33-4502-99ae-568ebcda0d8f",
+      "name": "恋人",
+      "ownerId": "minahoku0725@gmail.com",
+      "inviteCode": "6167BA68",
+      "members": [
+        {
+          "id": "2f33fa77-7c7a-48a1-b682-8a9ee5dcbf66",
+          "name": "カタヤマホクト",
+          "email": "minahoku0725@gmail.com",
+          "avatar": "https://lh3.googleusercontent.com/a/ACg8ocI1aoI00T4Xpt172Oz30AUuavZhwnIdMjgzYvoM9CKHyF0J1Q=s96-c",
+          "order": 0
+        }
+      ],
+      "currentMemberId": "2f33fa77-7c7a-48a1-b682-8a9ee5dcbf66",
+      "history": [
+        {
+          "id": "b4d2db67-efc6-4af4-aada-7069e0f554d9",
+          "memberId": "2f33fa77-7c7a-48a1-b682-8a9ee5dcbf66",
+          "timestamp": "2026-01-27T01:07:29.992Z"
+        },
+        {
+          "id": "cc8cb6ca-85f0-4e3f-8bf2-942546bb4730",
+          "memberId": "2f33fa77-7c7a-48a1-b682-8a9ee5dcbf66",
+          "timestamp": "2026-01-27T01:03:42.533Z"
+        }
+      ]
+    }
+  ]
+}

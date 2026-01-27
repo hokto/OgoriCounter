@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ogori Counter (奢りカウンター)
 
-## Getting Started
+次は誰が奢る番かを管理するシンプルなアプリケーションです。
+Dockerを使用して簡単に立ち上げることができ、データはローカルのJSONファイルに永続化されます。
 
-First, run the development server:
+## 機能
+- **公正なターン制**: 設定された順序で奢る担当が回ります。
+- **リッチなUI**: 現在の担当が表示され、奢りが完了するとボタンを押して次の人に交代できます。
+- **データ永続化**: コンテナを再起動してもデータは保持されます（`data.json`）。
 
+## 技術スタック
+- **Frontend**: Next.js 14 (App Router), React, Framer Motion
+- **Styling**: Css Modules, Globals (Vanilla CSS with Variables)
+- **Backend**: Server Actions, JSON persistence
+- **Container**: Docker
+
+## 開発環境のセットアップ
+
+### 前提条件
+- Node.js 18+
+- Docker (オプション)
+
+### ローカルでの実行
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+http://localhost:3000 にアクセスしてください。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dockerでのデプロイ（推奨）
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dockerを使用することで、環境構築の手間なくアプリを起動できます。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **イメージのビルドと起動**
+   ```bash
+   docker-compose up --build -d
+   ```
 
-## Learn More
+2. **アプリへのアクセス**
+   ブラウザで http://localhost:3000 を開いてください。
 
-To learn more about Next.js, take a look at the following resources:
+3. **データの永続化**
+   `docker-compose.yml` の設定により、カレントディレクトリの `data.json` がコンテナ内の `/app/data.json` にマウントされます。
+   これにより、コンテナを停止・削除してもデータは消えません。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **停止**
+   ```bash
+   docker-compose down
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## カスタマイズ
+- **メンバーの追加**: `src/lib/store.ts` の `INITIAL_STATE` を編集するか、データをリセット（`data.json`を削除）してください。
