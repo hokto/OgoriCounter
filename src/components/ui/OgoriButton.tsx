@@ -3,20 +3,34 @@
 import React from 'react';
 import styles from './OgoriButton.module.css';
 import { motion } from 'framer-motion';
-import clsx from 'clsx'; // Assuming clsx is installed or will be
+import clsx from 'clsx';
 
 interface OgoriButtonProps {
     isActive: boolean;
     onPay: () => void;
-    nextName?: string;
+    currentPayerName?: string;
+    isCurrentPayer?: boolean;
     disabled?: boolean;
 }
 
-export const OgoriButton: React.FC<OgoriButtonProps> = ({ isActive, onPay, nextName, disabled = false }) => {
+export const OgoriButton: React.FC<OgoriButtonProps> = ({ isActive, onPay, currentPayerName, isCurrentPayer = false, disabled = false }) => {
     const handleClick = () => {
         if (isActive && !disabled) {
             onPay();
         }
+    };
+
+    // 3 states: active (confirmer), payer (waiting), bystander (waiting)
+    const getLabel = () => {
+        if (isActive) return "ありがとう！";
+        if (isCurrentPayer) return "おまかせ中♪";
+        return "待ってるよ〜";
+    };
+
+    const getSubLabel = () => {
+        if (isActive) return "タップして確認 ✓";
+        if (isCurrentPayer) return "あなたの番です";
+        return "Waiting...";
     };
 
     return (
@@ -31,14 +45,14 @@ export const OgoriButton: React.FC<OgoriButtonProps> = ({ isActive, onPay, nextN
                 onClick={handleClick}
                 disabled={disabled || !isActive}
                 whileTap={{ scale: 0.95 }}
-                aria-label={isActive ? "Pay now" : "Wait for turn"}
+                aria-label={isActive ? "Confirm payment" : "Wait for turn"}
             >
                 <div className={styles.glassContent}>
-                    <span className={styles.label} style={{ fontSize: isActive ? '1.4rem' : '1.2rem' }}>
-                        {isActive ? "払うよ〜" : "見守り中"}
+                    <span className={styles.label} style={{ fontSize: isActive ? '1.2rem' : '1.1rem' }}>
+                        {getLabel()}
                     </span>
                     <span className={styles.subLabel}>
-                        {isActive ? "It's my turn!" : "Waiting..."}
+                        {getSubLabel()}
                     </span>
                 </div>
             </motion.button>

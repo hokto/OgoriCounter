@@ -18,7 +18,15 @@ export default function RoomView({ room, onTurnComplete, session }: RoomViewProp
 
     const myId = room.members.find(m => m.email === session.user?.email)?.id;
     const currentMember = room.members.find(m => m.id === room.currentMemberId);
-    const isMyTurn = currentMember?.id === myId;
+
+    // New logic: the NEXT person in rotation has the button permission.
+    // They press the button to confirm the current person paid.
+    const sortedMembers = [...room.members].sort((a, b) => a.order - b.order);
+    const currentIndex = sortedMembers.findIndex(m => m.id === room.currentMemberId);
+    const nextIndex = currentIndex !== -1 ? (currentIndex + 1) % sortedMembers.length : -1;
+    const nextMember = nextIndex !== -1 ? sortedMembers[nextIndex] : null;
+    const isMyConfirmTurn = nextMember?.id === myId;
+    const isCurrentPayer = currentMember?.id === myId;
 
     return (
         <div className="room-view-container">
@@ -29,9 +37,11 @@ export default function RoomView({ room, onTurnComplete, session }: RoomViewProp
             {currentMember && <TurnIndicator member={currentMember} />}
 
             <OgoriButton
-                isActive={isMyTurn}
+                isActive={isMyConfirmTurn}
                 onPay={() => onTurnComplete(room.id)}
-                disabled={!isMyTurn}
+                disabled={!isMyConfirmTurn}
+                currentPayerName={currentMember?.name}
+                isCurrentPayer={isCurrentPayer}
             />
 
             <div style={{ marginTop: '2rem', textAlign: 'center' }}>

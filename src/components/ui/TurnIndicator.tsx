@@ -10,7 +10,7 @@ interface TurnIndicatorProps {
 export const TurnIndicator: React.FC<TurnIndicatorProps> = ({ member }) => {
     return (
         <div className={clsx(styles.container, 'glass')}>
-            <span className={styles.label}>Current Turn</span>
+            <span className={styles.label}>今の支払い担当</span>
             <div className={styles.memberInfo}>
                 {member.avatar && member.avatar.startsWith('http') ? (
                     <img

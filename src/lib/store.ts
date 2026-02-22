@@ -154,12 +154,12 @@ export async function rotateTurn(roomId: string): Promise<Room | null> {
     const nextIndex = (currentIndex + 1) % members.length;
     const nextUserId = members[nextIndex].userId;
 
-    // Transaction: Create Turn and Update Room
+    // Transaction: Create Turn record (current person paid) and rotate to next
     await prisma.$transaction([
         prisma.turn.create({
             data: {
                 roomId: roomId,
-                userId: room.currentTurnUserId, // User who finished their turn (paid)
+                userId: room.currentTurnUserId, // User who paid (confirmed by the next person)
             }
         }),
         prisma.room.update({
